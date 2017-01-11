@@ -10,7 +10,7 @@ apt-get install git libssl-dev libpam0g-dev zlib1g-dev dh-autoreconf
 
 cd /opt/
 
-git clone https://github.com/shellinabox/shellinabox.git && cd shellinabox
+git clone https://github.com/simono41/shellinabox.git && cd shellinabox
 
 autoreconf -i
 
