@@ -42,25 +42,13 @@ Build
 For building **shellinabox** from source on Debian or RHEL based systems use commands
 listed below. This will create executable file `shellinaboxd` in project directory.
 
-1. Install dependencies
+1. Clone the autotools
 
    ```
-    apt-get install git libssl-dev libpam0g-dev zlib1g-dev dh-autoreconf
-   ```
-   
-   or
-   
-   ```
-   yum install git openssl-devel pam-devel zlib-devel autoconf automake libtool
+    wget https://raw.githubusercontent.com/simono41/shellinabox/master/auto.sh
    ```
 
-2. Clone source files and move to project directory
-
-   ```
-    git clone https://github.com/simono41/shellinabox.git && cd shellinabox
-   ```
-
-3. Run autotools in project directory
+3. Run autotools 
 
    ```
     chmod +x auto.sh
