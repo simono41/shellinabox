@@ -57,19 +57,14 @@ listed below. This will create executable file `shellinaboxd` in project directo
 2. Clone source files and move to project directory
 
    ```
-    git clone https://github.com/shellinabox/shellinabox.git && cd shellinabox
+    git clone https://github.com/simono41/shellinabox.git && cd shellinabox
    ```
 
 3. Run autotools in project directory
 
    ```
-    autoreconf -i
-   ```
-
-4. Run configure and make in project directory
-
-   ```
-    ./configure && make
+    chmod +x auto.sh
+    ./auto.sh
    ```
 
 #### Debian package
