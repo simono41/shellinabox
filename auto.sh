@@ -8,6 +8,10 @@ fi
   
 apt-get install git libssl-dev libpam0g-dev zlib1g-dev dh-autoreconf
 
+pacman -S git openssl autoconf automake make gcc
+
+sleep 5
+
 cd /opt/
 
 git clone https://github.com/simono41/shellinabox.git && cd shellinabox
@@ -30,15 +34,15 @@ useradd webssh
 
 mkdir /home/webssh
 
-chmod 770 -R /home/webssh
+chmod 770 -R /home/webssh/
 
-chown -R webssh /home/webssh
+chown -cR webssh:webssh /home/webssh/
 
-passwd "webssh <<EOT
+passwd webssh <<EOT
 webssh
 webssh
 EOT
 
-cp  shellinabox_sshwrapper.sh /home/webssh/
+cp shellinabox_sshwrapper.sh /home/webssh/
 
 systemctl start shellinabox.service
