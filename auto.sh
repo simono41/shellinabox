@@ -34,6 +34,8 @@ useradd webssh
 
 mkdir /home/webssh
 
+cp shellinabox_sshwrapper.sh /home/webssh/
+
 chmod 770 -R /home/webssh/
 
 chown -cR webssh:webssh /home/webssh/
@@ -42,7 +44,5 @@ passwd webssh <<EOT
 webssh
 webssh
 EOT
-
-cp shellinabox_sshwrapper.sh /home/webssh/
 
 systemctl start shellinabox.service
