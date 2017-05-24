@@ -1,20 +1,22 @@
 #!/bin/bash
 
+set -x
+
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 1>&2
    exit 1
 fi
   echo "Als root Angemeldet"
-  
+
 apt-get install git libssl-dev libpam0g-dev zlib1g-dev dh-autoreconf
 
 pacman -S git openssl autoconf automake make gcc
 
-sleep 5
-
 cd /opt/
 
-git clone https://github.com/simono41/shellinabox.git && cd shellinabox
+git clone https://github.com/simono41/shellinabox.git
+
+cd shellinabox
 
 autoreconf -i
 
@@ -45,4 +47,4 @@ webssh
 webssh
 EOT
 
-systemctl start shellinabox.service
+systemctl start shellinabox.service &
