@@ -1,12 +1,17 @@
 #!/bin/bash
+#
+set -ex
 # 
-read -p "SSH remote host (hostname or ip address): " host;
+read -p "SSH remote host (hostname or ip address) [localhost] : " host;
+[[ -z "${host}" ]] && host=localhost;
 #
 read -p "If a puplic_key authentification?: [y/N] : " puplic;
 #
-read -p "SSH remote port (22): " port;
+read -p "SSH remote port [22] : " port;
+[[ -z "${port}" ]] && port=22;
 #
-read -p "SSH remote username: " username;
+read -p "SSH remote username [pi] : " username;
+[[ -z "${username}" ]] && username=pi;
 #
 if [ "$puplic" == "y" ];
   then
