@@ -2,7 +2,7 @@
 # 
 read -p "SSH remote host (hostname or ip address): " host;
 #
-read -p "If a puplic_key authentification?: N or y: " puplic;
+read -p "If a puplic_key authentification?: [y/N] : " puplic;
 #
 read -p "SSH remote port (22): " port;
 #
