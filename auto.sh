@@ -8,11 +8,15 @@ if [[ $EUID -ne 0 ]]; then
 fi
   echo "Als root Angemeldet"
 
-apt update
+if [ -f /usr/bin/apt ]; then
+  apt update
 
-apt install git libssl-dev libpam0g-dev zlib1g-dev dh-autoreconf
+  apt install git libssl-dev libpam0g-dev zlib1g-dev dh-autoreconf
+fi
 
-pacman -S git openssl autoconf automake make gcc
+if [ -f /usr/bin/pacman ]; then
+  pacman -Sy git openssl autoconf automake make gcc
+fi
 
 cd /opt/
 
