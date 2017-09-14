@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+set -ex
 
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root" 1>&2
@@ -8,7 +8,9 @@ if [[ $EUID -ne 0 ]]; then
 fi
   echo "Als root Angemeldet"
 
-apt-get install git libssl-dev libpam0g-dev zlib1g-dev dh-autoreconf
+apt update
+
+apt install git libssl-dev libpam0g-dev zlib1g-dev dh-autoreconf
 
 pacman -S git openssl autoconf automake make gcc
 
